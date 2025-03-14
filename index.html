@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image</title>
+  <title>Image as an IMU</title>
   <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -92,11 +92,11 @@
                   <!-- Github link -->
                   <span class="link-block">
                     <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                    class="external-link button is-normal is-rounded is-light">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (Coming Soon)</span>
                   </a>
                 </span>
 
@@ -123,13 +123,13 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
+      <video poster="" id="tree" autoplay muted loop height="100%">
         <!-- Your video here -->
         <source src="static/videos/banner_video.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Given a single motion-blurred image, we can predict the camera velocity at that instant.
       </h2>
     </div>
   </div>
@@ -204,13 +204,11 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <div class="item">
-            <!-- <img src="static/images/blur_method.png" alt="Method Overview"> -->
-            <!-- <embed src="static/images/blur_method.svg" type="image/svg+xml" /> -->
              <img src="static/images/blur_method.svg" alt="Method Overview">
           </div>
           <div class="content has-text-justified">
             <p> 
-              Given a single image, our method predicts a dense motion flow field and a monocular depth map. We then recover the instantaneous camera velocity with linear least squares.
+              Given a single image, our method predicts a dense motion flow field and a monocular depth map. We then recover the instantaneous camera velocity with linear least squares using the known exposure time and camera intrinsics.
             </p>
           </div>
         </div>
@@ -218,7 +216,7 @@
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+<!-- End of method -->
 
 
 <!-- Video carousel -->
@@ -278,7 +276,13 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>
+        @article{chen2025_image_as_imu,
+          title     = {{Image as an IMU}: Estimating Camera Motion from a Single Motion-Blurred Image},
+          author    = {Chen, Jerred and Clark, Ronald},
+          journal   = {arXiv preprint},
+          year      = {2025}}
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
