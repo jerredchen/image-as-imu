@@ -213,6 +213,13 @@
         
         speedToggle.querySelector('span').textContent = `Playback Speed: ${newSpeed}x`;
       });
+      
+      // Initialize the carousel with autoplay disabled
+      bulmaCarousel.attach('#results-carousel', {
+        autoplay: true,
+        autoplaySpeed: 10000,
+        loop: true
+      });
     });
   </script>
 </section>
