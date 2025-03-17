@@ -6,7 +6,7 @@ var NUM_ANIMATION_FRAMES = 175;
 var interp_images = [];
 function preloadAnimationImages() {
   for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-    var path = INTERP_BASE + '/' + String(i).padStart(4, '0') + '.jpg';
+    var path = INTERP_BASE + '/' + String(i).padStart(4, '0') + '.png';
     interp_images[i] = new Image();
     interp_images[i].src = path;
   }
