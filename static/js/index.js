@@ -3,17 +3,17 @@ window.HELP_IMPROVE_VIDEOJS = false;
 var ANIMATION_BASE = "./static/images/animation_frames";
 var NUM_ANIMATION_FRAMES = 175;
 
-var interp_images = [];
+var animation_images = [];
 function preloadAnimationImages() {
   for (var i = 0; i < NUM_ANIMATION_FRAMES; i++) {
     var path = ANIMATION_BASE + '/frame_' + String(i).padStart(4, '0') + '.jpg';
-    interp_images[i] = new Image();
-    interp_images[i].src = path;
+    animation_images[i] = new Image();
+    animation_images[i].src = path;
   }
 }
 
 function setAnimationImage(i) {
-  var image = interp_images[i];
+  var image = animation_images[i];
   image.ondragstart = function() { return false; };
   image.oncontextmenu = function() { return false; };
   $('#animation-image-wrapper').empty().append(image);
