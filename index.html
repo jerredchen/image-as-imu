@@ -161,6 +161,11 @@
   <div class="hero-body">
     <div class="container is-centered has-text-centered">
       <h2 class="title is-3">Carousel</h2>
+      <div class="playback-controls has-text-centered mb-3">
+        <button class="button is-small is-rounded is-info" id="speed-toggle">
+          <span>Playback Speed: 0.25x</span>
+        </button>
+      </div>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
@@ -172,23 +177,46 @@
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
             <!-- Your video file here -->
-            <source src="static/videos/example_demo.mp4"
+            <source src="static/videos/demo-cr.mov"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
             <!-- Your video file here -->
-            <source src="static/videos/example_demo.mp4"
+            <source src="static/videos/demo-cr.mov"
             type="video/mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const speedToggle = document.getElementById('speed-toggle');
+      const videos = document.querySelectorAll('#results-carousel video');
+      const speeds = [0.25, 0.5, 1.0, 1.5, 2.0];
+      let currentSpeedIndex = 0;
+      
+      // Set initial playback rate
+      videos.forEach(video => {
+        video.playbackRate = speeds[currentSpeedIndex];
+      });
+      
+      speedToggle.addEventListener('click', function() {
+        currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+        const newSpeed = speeds[currentSpeedIndex];
+        
+        videos.forEach(video => {
+          video.playbackRate = newSpeed;
+        });
+        
+        speedToggle.querySelector('span').textContent = `Playback Speed: ${newSpeed}x`;
+      });
+    });
+  </script>
 </section>
 <!-- End video carousel -->
-
 
 <!-- Method -->
 <section class="hero is-small">
