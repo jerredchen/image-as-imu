@@ -60,7 +60,7 @@ $(document).ready(function() {
                 $('#animation-slider').prop('value', 0);
                 setAnimationImage(0);
             }
-        }, 300);
+        }, 500);
     }
 
     autoplaySlider(); // Start autoplay
