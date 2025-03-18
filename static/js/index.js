@@ -43,5 +43,34 @@ $(document).ready(function() {
     $('#animation-slider').prop('max', NUM_ANIMATION_FRAMES - 1);
 
     bulmaSlider.attach();
+  
+    let interval;
+    let step = 1; // Adjust the step size
+
+    function autoplaySlider() {
+        interval = setInterval(() => {
+            let value = parseInt(bulmaSlider.value);
+            let max = parseInt(bulmaSlider.max);
+
+            // Increment or reset
+            if (value + step <= max) {
+                bulmaSlider.value = value + step;
+            } else {
+                bulmaSlider.value = 0; // Reset to the beginning
+            }
+        }, 500); // Change value every 1 second
+    }
+
+    autoplaySlider(); // Start autoplay
+
+    // Optional: Stop autoplay on user interaction
+    bulmaSlider.addEventListener("input", function () {
+        clearInterval(interval);
+    });
+
+    // Optional: Resume autoplay after a short delay
+    bulmaSlider.addEventListener("change", function () {
+        setTimeout(autoplaySlider, 7000);
+    });
 
 })
