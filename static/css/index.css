@@ -140,7 +140,7 @@ body {
   height: auto;       /* Maintains aspect ratio */
   display: block;     /* Removes extra space below image */
   margin: 0 auto;     /* Centers the image */
-  max-height: 500px;  /* Limits maximum height */
+  /* max-height: 500px; */
 }
 
 /* Animation container styling */
