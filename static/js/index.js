@@ -49,7 +49,7 @@ $(document).ready(function() {
 
     function autoplaySlider() {
         interval = setInterval(() => {
-            let value =  $('#animation-slider').prop('value');
+            let value =  parseInt($('#animation-slider').prop('value'));
             let max = NUM_ANIMATION_FRAMES - 1;
 
             // Increment or reset
@@ -75,7 +75,7 @@ $(document).ready(function() {
   // Resume autoplay after a delay when user finishes interaction
   $('#animation-slider').on('change', function () {
       clearTimeout(autoplayTimeout); // Clear any existing timeout
-      autoplayTimeout = setTimeout(autoplaySlider, 7000);
+      autoplayTimeout = setTimeout(autoplaySlider, 5000);
   });
 
 })
