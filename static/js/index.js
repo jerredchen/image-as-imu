@@ -55,10 +55,10 @@ $(document).ready(function() {
             // Increment or reset
             if (value + 1 <= max) {
                 $('#animation-slider').prop('value', value + 1);
-                // setAnimationImage(parseInt(value) + 1);
+                setAnimationImage(value + 1);
             } else {
                 $('#animation-slider').prop('value', 0);
-                // setAnimationImage(0);
+                setAnimationImage(0);
             }
         }, 1000);
     }
