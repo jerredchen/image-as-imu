@@ -45,7 +45,6 @@ $(document).ready(function() {
     bulmaSlider.attach();
   
     let interval;
-    let step = 1; // Adjust the step size
     let autoplayTimeout;
 
     function autoplaySlider() {
@@ -54,14 +53,14 @@ $(document).ready(function() {
             let max = NUM_ANIMATION_FRAMES - 1;
 
             // Increment or reset
-            if (value + step <= max) {
-                $('#animation-slider').prop('value', value + step);
-                setAnimationImage(parseInt(value) + step);
+            if (value + 1 <= max) {
+                $('#animation-slider').prop('value', value + 1);
+                // setAnimationImage(parseInt(value) + 1);
             } else {
                 $('#animation-slider').prop('value', 0);
-                setAnimationImage(0);
+                // setAnimationImage(0);
             }
-        }, 500); // Change value every 1 second
+        }, 1000);
     }
 
     autoplaySlider(); // Start autoplay
