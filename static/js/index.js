@@ -46,31 +46,37 @@ $(document).ready(function() {
   
     let interval;
     let step = 1; // Adjust the step size
+    let autoplayTimeout;
 
     function autoplaySlider() {
         interval = setInterval(() => {
-            let value = parseInt(bulmaSlider.value);
-            let max = parseInt(bulmaSlider.max);
+            let value =  $('#animation-slider').prop('value');
+            let max = NUM_ANIMATION_FRAMES - 1;
 
             // Increment or reset
             if (value + step <= max) {
-                bulmaSlider.value = value + step;
+                $('#animation-slider').prop('value', value + step);
+                setAnimationImage(parseInt(value) + step);
             } else {
-                bulmaSlider.value = 0; // Reset to the beginning
+                $('#animation-slider').prop('value', 0);
+                setAnimationImage(0);
             }
         }, 500); // Change value every 1 second
     }
 
     autoplaySlider(); // Start autoplay
 
-    // Optional: Stop autoplay on user interaction
-    bulmaSlider.addEventListener("input", function () {
-        clearInterval(interval);
-    });
+    // Stop autoplay on user interaction
+    $('#animation-slider').on('input', function () {
+      clearInterval(interval);
+      // Also clear any pending autoplay resumption
+      clearTimeout(autoplayTimeout);
+  });
 
-    // Optional: Resume autoplay after a short delay
-    bulmaSlider.addEventListener("change", function () {
-        setTimeout(autoplaySlider, 7000);
-    });
+  // Resume autoplay after a delay when user finishes interaction
+  $('#animation-slider').on('change', function () {
+      clearTimeout(autoplayTimeout); // Clear any existing timeout
+      autoplayTimeout = setTimeout(autoplaySlider, 7000);
+  });
 
 })
