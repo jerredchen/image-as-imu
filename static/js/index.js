@@ -75,7 +75,7 @@ $(document).ready(function() {
   // Resume autoplay after a delay when user finishes interaction
   $('#animation-slider').on('change', function () {
       clearTimeout(autoplayTimeout); // Clear any existing timeout
-      autoplayTimeout = setTimeout(autoplaySlider, 5000);
+      autoplayTimeout = setTimeout(autoplaySlider, 8000);
   });
 
 })
