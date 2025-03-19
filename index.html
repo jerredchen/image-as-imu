@@ -161,7 +161,7 @@
         <div class="column is-four-fifths">
           <div class="content has-text-justified">
             <p>
-              We evaluate our method on real-world motion-blurred videos. While our network only takes a single frame as input, we compare against baselines that use multiple frames to compute the velocity. If necessary, the velocity direction is flipped depending on the photometric error between the current and previous/next frames. We directly treat the gyroscope readings as the angular velocity ground truth, and we approximate the translational velocity ground truth using the ARKit poses and framerate. Note that the angular velocity axes are x-up, y-left, z-backwards (using the IMU convention) whereas the the translational velocity axes are x-right, y-down, z-forward (using OpenCV convention).
+              We evaluate our method on real-world motion-blurred videos. While the baseline methods must use multiple frames to compute the velocity, our network only takes a <i>single frame</i> as input. If necessary, our velocity direction is flipped depending on the photometric error between the current and previous/next frames. We directly treat the gyroscope readings as the angular velocity ground truth, and we approximate the translational velocity ground truth using the ARKit poses and framerate. Note that the angular velocity axes are x-up, y-left, z-backwards (using the IMU convention) whereas the the translational velocity axes are x-right, y-down, z-forward (using OpenCV convention).
             </p>
           </div>
         </div>
