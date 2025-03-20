@@ -53,14 +53,14 @@ $(document).ready(function() {
             let max = NUM_ANIMATION_FRAMES - 1;
 
             // Increment or reset
-            if (value + 1 <= max) {
-                $('#animation-slider').prop('value', value + 1);
-                setAnimationImage(value + 1);
+            if (value + 50 <= max) {
+                $('#animation-slider').prop('value', value + 50);
+                setAnimationImage(value + 50);
             } else {
                 $('#animation-slider').prop('value', 0);
                 setAnimationImage(0);
             }
-        }, 500);
+        }, 2000);
     }
 
     autoplaySlider(); // Start autoplay
@@ -75,7 +75,7 @@ $(document).ready(function() {
   // Resume autoplay after a delay when user finishes interaction
   $('#animation-slider').on('change', function () {
       clearTimeout(autoplayTimeout); // Clear any existing timeout
-      autoplayTimeout = setTimeout(autoplaySlider, 8000);
+      autoplayTimeout = setTimeout(autoplaySlider, 10000);
   });
 
 })
