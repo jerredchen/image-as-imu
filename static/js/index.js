@@ -51,11 +51,12 @@ $(document).ready(function() {
         interval = setInterval(() => {
             let value =  parseInt($('#animation-slider').prop('value'));
             let max = NUM_ANIMATION_FRAMES - 1;
+            let step = 35;
 
             // Increment or reset
-            if (value + 30 <= max) {
-                $('#animation-slider').prop('value', value + 30);
-                setAnimationImage(value + 30);
+            if (value + step <= max) {
+                $('#animation-slider').prop('value', value + step);
+                setAnimationImage(value + step);
             } else {
                 $('#animation-slider').prop('value', 0);
                 setAnimationImage(0);
