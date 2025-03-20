@@ -51,7 +51,7 @@ $(document).ready(function() {
         interval = setInterval(() => {
             let value =  parseInt($('#animation-slider').prop('value'));
             let max = NUM_ANIMATION_FRAMES - 1;
-            let step = 35;
+            let step = 25;
 
             // Increment or reset
             if (value + step <= max) {
@@ -61,7 +61,7 @@ $(document).ready(function() {
                 $('#animation-slider').prop('value', 0);
                 setAnimationImage(0);
             }
-        }, 2000);
+        }, 2500);
     }
 
     autoplaySlider(); // Start autoplay
