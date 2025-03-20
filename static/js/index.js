@@ -53,9 +53,9 @@ $(document).ready(function() {
             let max = NUM_ANIMATION_FRAMES - 1;
 
             // Increment or reset
-            if (value + 50 <= max) {
-                $('#animation-slider').prop('value', value + 50);
-                setAnimationImage(value + 50);
+            if (value + 30 <= max) {
+                $('#animation-slider').prop('value', value + 30);
+                setAnimationImage(value + 30);
             } else {
                 $('#animation-slider').prop('value', 0);
                 setAnimationImage(0);
