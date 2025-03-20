@@ -161,7 +161,10 @@
         <div class="column is-four-fifths">
           <div class="content has-text-justified">
             <p>
-              We evaluate our method on real-world motion-blurred videos. While the baseline methods must use multiple frames to compute the velocity, our network only takes a <i>single frame</i> as input. If necessary, our velocity direction is flipped depending on the photometric error between the current and previous/next frames. We directly treat the gyroscope readings as the angular velocity ground truth, and we approximate the translational velocity ground truth using the ARKit poses and framerate. Note that the angular velocity axes are x-up, y-left, z-backwards (using the IMU convention) whereas the the translational velocity axes are x-right, y-down, z-forward (using OpenCV convention).
+              We evaluate our method on real-world motion-blurred videos. While the baseline methods must use multiple frames to compute the velocity, our network only takes a <i>single frame</i> as input. 
+              Because the true direction of a single motion-blurred image is ambiguous, we flip the velocity direction as necessary based on the photometric error between frames. 
+              We directly treat the gyroscope readings as the angular velocity ground truth, and we approximate the translational velocity ground truth using the ARKit poses and framerate. 
+              Note that the angular velocity axes are x-up, y-left, z-backwards (using the IMU convention) whereas the the translational velocity axes are x-right, y-down, z-forward (using OpenCV convention).
             </p>
           </div>
         </div>
@@ -229,7 +232,8 @@
     <h3 class="title is-4 has-text-centered">Frame-by-Frame Inference</h3>
     <div class="content is-centered has-text-centered">
       <p>
-        Our network uses a single frame as input <i>in complete isolation from the rest of the video</i>. Try the slider to see how our method recovers the camera motion at a particular frame!
+        Our network uses a single frame as input <i>in complete isolation from the rest of the video</i>. 
+        Try the slider to see how our method recovers the camera motion at a particular frame!
       </p>
     </div>
     <div class="columns is-vcentered animation-panel">
@@ -261,7 +265,9 @@
           </div>
           <div class="content has-text-justified">
             <p> 
-              Given a single image, our method predicts a dense motion flow field and a monocular depth map. We then recover the instantaneous camera velocity with linear least squares using the known exposure time and intrinsics. To disambiguate the velocity direction in a video, we use the predicted motion to compute the photometric error between the current frame and the previous/next frames and flip the direction if necessary.
+              Given a single image, our method predicts a dense motion flow field and a monocular depth map. 
+              We then recover the instantaneous camera velocity with linear least squares using the known exposure time and intrinsics. 
+              To disambiguate the velocity direction in a video, we use the predicted motion to compute the photometric error between the current frame and the previous/next frames and flip the direction if necessary.
             </p>
           </div>
         </div>
@@ -283,7 +289,9 @@
       </video>
       <div class="content has-text-centered">
         <p> 
-          We show the runtimes of our method against the baselines on one of the real-world videos. All methods are run on an Nvidia RTX 3090. Even including the direction disambiguation, our method is significantly faster and runs in real-time at 30 FPS. For DROID-SLAM, we set every frame to be a keyframe to obtain a velocity estimate for every frame.
+          We show the runtimes of our method against the baselines on one of the real-world videos. All methods are run on an Nvidia RTX 3090. 
+          Even including the direction disambiguation, our method is significantly faster and runs in real-time at 30 FPS. 
+          For DROID-SLAM, we set every frame to be a keyframe to obtain a velocity estimate for every frame.
         </p>
       </div>
   </div>
