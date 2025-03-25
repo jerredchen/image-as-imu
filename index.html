@@ -151,7 +151,7 @@
 </section>
 <!-- End paper abstract -->
 
-<!-- Evaluation Setup -->
+<!-- Motivation -->
 <section class="hero is-small">
   <br/>
   <div class="container is-max-desktop">
@@ -172,8 +172,32 @@
   <br/>
   <br/>
 </section>
-<!-- End of evaluation setup -->
+<!-- End of motivation -->
 
+<!-- Method -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Method Overview</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="item">
+             <img src="static/images/blur_method.jpg" alt="Method Overview">
+          </div>
+          <div class="content has-text-justified">
+            <p> 
+              Given a single image, our method predicts a dense motion flow field and a monocular depth map. 
+              We then recover the instantaneous camera velocity with linear least squares using the known exposure time and intrinsics. 
+              To disambiguate the velocity direction in a video, we use the predicted motion to compute the photometric error between the current frame and the previous/next frames and flip the direction if necessary.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+</section>
+<!-- End of method -->
 
 <!-- Evaluation Setup -->
 <section class="hero is-small">
@@ -316,32 +340,6 @@
   </div>
 </div>
 <!--/ Animation. -->
-
-
-<!-- Method -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Method Overview</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="item">
-             <img src="static/images/blur_method.jpg" alt="Method Overview">
-          </div>
-          <div class="content has-text-justified">
-            <p> 
-              Given a single image, our method predicts a dense motion flow field and a monocular depth map. 
-              We then recover the instantaneous camera velocity with linear least squares using the known exposure time and intrinsics. 
-              To disambiguate the velocity direction in a video, we use the predicted motion to compute the photometric error between the current frame and the previous/next frames and flip the direction if necessary.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br/>
-</section>
-<!-- End of method -->
 
 <!-- Runtime -->
 <section class="hero is-small">
